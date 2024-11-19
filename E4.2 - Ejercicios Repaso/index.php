@@ -103,7 +103,7 @@
         ];
 
         echo "<h2>Clase A</h2>";
-        echo "<table border='1'>";
+        echo "<table>";
         echo "<tr><th>Nombre</th><th>Edad</th></tr>";
         foreach ($claseA as $alumno) {
             echo "<tr><td>{$alumno['Nombre']}</td><td>{$alumno['Edad']}</td></tr>";
@@ -111,7 +111,7 @@
         echo "</table>";
 
         echo "<h2>Clase B</h2>";
-        echo "<table border='1'>";
+        echo "<table>";
         echo "<tr><th>Nombre</th><th>Edad</th></tr>";
         foreach ($claseB as $alumno) {
             echo "<tr><td>{$alumno['Nombre']}</td><td>{$alumno['Edad']}</td></tr>";
@@ -121,7 +121,7 @@
         $claseUnida = array_merge($claseA, $claseB);
 
         echo "<h2>Clase Unificada</h2>";
-        echo "<table border='1'>";
+        echo "<table>";
         echo "<tr><th>Nombre</th><th>Edad</th></tr>";
         foreach ($claseUnida as $alumno) {
             echo "<tr><td>{$alumno['Nombre']}</td><td>{$alumno['Edad']}</td></tr>";

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 
@@ -163,7 +164,7 @@
         <!-- Calcular la población total de cada comunidad -->
         <?php
         echo "<h2>Ejercicio 5</h2>";
-        echo "<table border='1'>";
+        echo "<table>";
         echo "<tr><th>Comunidad</th><th>Población Total</th></tr>";
 
         foreach ($comunidades as $comunidad => $datos) {
@@ -180,36 +181,6 @@
         <!-- Sistema de búsqueda avanzado -->
         <?php
         echo "<h2>Ejercicio 6</h2>";
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buscar'])) {
-            $busqueda = $_POST['buscar'];
-            $resultados = [];
-
-            foreach ($comunidades as $comunidad => $datos) {
-                if (strpos($comunidad, $busqueda) !== false) {
-                    $resultados[] = "Comunidad: $comunidad";
-                }
-                foreach ($datos['provincias'] as $provincia) {
-                    if (strpos($provincia, $busqueda) !== false) {
-                        $resultados[] = "Provincia: $provincia (Comunidad: $comunidad)";
-                    }
-                }
-                foreach ($datos['capital'] as $capital => $info) {
-                    if (strpos($capital, $busqueda) !== false) {
-                        $resultados[] = "Capital: $capital (Comunidad: $comunidad)";
-                    }
-                }
-            }
-
-            if (!empty($resultados)) {
-                echo "<ul>";
-                foreach ($resultados as $resultado) {
-                    echo "<li>$resultado</li>";
-                }
-                echo "</ul>";
-            } else {
-                echo "<p>No se encontraron resultados para '$busqueda'.</p>";
-            }
-        }
         ?>
     </div>
 
